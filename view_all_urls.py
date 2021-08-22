@@ -38,11 +38,10 @@ class ViewMappingGui:
         self.data = self.db.select_all()
         self.buttons = []
         for i in self.data:
-            print("data",i)
             url = i[0]
             self.buttons.append(
                 Button(self.master, text="Name: " + i[2] + ", Short URL: http://127.0.0.1:5000/" + i[1]
-                       , command=lambda: open_browser(url)))
+                       , command=lambda: self.open_browser_click(url)))
 
         for i in self.buttons:
             i.pack()
@@ -52,6 +51,10 @@ class ViewMappingGui:
         for l in self.buttons:
             l.destroy()
         self.add_data_view()
+
+    def open_browser_click(self,url):
+        open_browser(url)
+        self.master.destroy()
 
     # run the window
     def run(self):
