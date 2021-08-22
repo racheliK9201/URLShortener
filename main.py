@@ -1,8 +1,7 @@
 import threading
-from server import FlaskServer
+import server
 import GUI_window
 
-server=FlaskServer()
 def run_server():
     server.run()
 

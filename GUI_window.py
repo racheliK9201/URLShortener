@@ -36,7 +36,7 @@ class MyGUI:
         self.copy_url_button=Button(self.master,text="copy URL",command=self.copy)
         self.copy_url_button.pack()
 
-        self.open_url_button = Button(self.master, text="open URL in chrome", command=lambda :open_browser(self.new_url))
+        self.open_url_button = Button(self.master, text="open URL in chrome", command=lambda :open_browser("----"+self.new_url))
         self.open_url_button.pack()
 
         self.view_url_mapping_button = Button(self.master, text="view all urls mapping", command=self.view_all_mapping)
